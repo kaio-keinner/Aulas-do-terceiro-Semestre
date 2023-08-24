@@ -2,7 +2,8 @@ package com.tads4.ecmmerce.entities;
 
 import jakarta.persistence.*;
 
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
@@ -18,6 +19,8 @@ public class User {
     private String birthDate;
     private String password;
 
+    @OneToMany(mappedBy = "client")
+    private List<Order> orders = new ArrayList<>();
     public User() {
     }
 
