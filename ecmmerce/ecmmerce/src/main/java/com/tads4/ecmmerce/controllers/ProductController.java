@@ -1,14 +1,2 @@
-package com.tads4.ecmmerce.controllers;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-@RequestMapping(value = "/products")
-public class ProductController {
-    @GetMapping
-    public String teste(){
-        return "hello world";
-    }
+package com.tads4.ecmmerce.controllers;public class ProductController {
 }
