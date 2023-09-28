@@ -30,6 +30,14 @@ import java.util.Optional;
 
 
         @Transactional
+        public ProductDTO insert(ProductDTO dto){
+            Product entity = new Product();
+            copyDtoToEntity(dto,  entity);
+            return new ProductDTO(entity);
+        }
+
+
+        @Transactional
         public ProductDTO update(Long id, ProductDTO dto){
             Product entity = repository.getReferenceById(id);
             copyDtoToEntity(dto, entity);
