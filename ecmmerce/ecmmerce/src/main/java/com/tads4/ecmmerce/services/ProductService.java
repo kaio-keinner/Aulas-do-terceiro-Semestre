@@ -51,6 +51,10 @@ import java.util.Optional;
         entity.setPrice(dto.getPrice());
     }
 
+        @Transactional
+        public void delete(Long id) {
+            repository.deleteById(id);
+        }
 
 
     }

@@ -1,6 +1,6 @@
 
 
-
+INSERT INTO tb_category(nome) VALUES ('Livros');
 INSERT INTO tb_category(nome) VALUES ('Eletrônicos');
 INSERT INTO tb_category(nome) VALUES ('Computadores');
 

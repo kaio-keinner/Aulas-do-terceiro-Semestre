@@ -1,6 +1,7 @@
 package com.tads4.ecmmerce.controllers;
 import com.tads4.ecmmerce.dto.ProductDTO;
 import com.tads4.ecmmerce.services.ProductService;
+import jakarta.persistence.Entity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -32,9 +33,15 @@ public class ProductController {
         return ResponseEntity.created(uri).body(dto);
     }
 
-    @GetMapping(value = "/{id}")
-    public ProductDTO findById(@PathVariable Long id, @RequestBody ProductDTO dto){
-        return service.findById(id);
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<ProductDTO> update(@PathVariable Long id, @RequestBody ProductDTO dto){
+        dto = service.update(id, dto);
+        return ResponseEntity.ok(dto);
+    }
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> update(@PathVariable Long id){
+        service.delete(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
